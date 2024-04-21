@@ -1,0 +1,6 @@
+python-daemon==2.2.3
+requests==2.31.0
+twilio==9.0.4
+urllib3==1.26.6
+watchdog==3.0.0
+yarl==1.9.4
