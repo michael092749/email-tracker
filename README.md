@@ -105,8 +105,8 @@ nohup python3 watcher.py
 On any device:
 
 1. Fill in credentials in cred.py
-2. Change the `LINK` of the tracking pixel to be your server's IP address followed by `\tracking-pixel
-3. Edit email subject, HTML body and recipicent variables in `tracker.py`
+2. Change the `LINK` of the tracking pixel to be your server's IP address followed by \tracking-pixel
+3. Edit email subject, HTML body and the recipient variables in `tracker.py`
 4. Send the email by running `python3 tracker.py`
 
 ### 5. Done!
