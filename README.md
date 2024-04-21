@@ -1,5 +1,3 @@
-# email-tracker
-=======
 ﻿# Email Tracker
 
 Get notified when your email gets read by using a tracking pixel and a NGINX web server.
