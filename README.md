@@ -11,6 +11,7 @@ An email containing a 1x1 tracking pixel is sent in the email. When the receiver
 ### 1. Setup
 
 1. Setup your webserver with Amazon AWS and Nginx as setup [here](https://aws.plainenglish.io/creating-an-ec2-instance-installing-an-nginx-webserver-8b0ab5ba10a9)
+
    User data to use to setup server installation:
 
 ```
