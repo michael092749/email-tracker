@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # email-tracker
 =======
 ﻿# Email Tracker
@@ -22,12 +21,11 @@ sudo yum update -y
 sudo amazon-linux-extras install nginx1 -y
 sudo amazon-linux-extras enable nginx1
 sudo systemctl start nginx
-
 ```
 
 2. Download this github repo
 3. Go to [Google App Passwords](https://myaccount.google.com/apppasswords) to generate an app passwords which will be used to send emails from your Gmail account.
-4. Update the credentials in cred.py file with your gmail details
+4. Update the credentials in `cred.py` file with your gmail details
 5. Update the main function in tracker.py with the recipent email and the email subject.
 6. Update the HTML email body accordingly
 7. Save the tracking `pixel.png` and the `watcher.py` file (which monitors for GET requests and sends SMS) on the server
@@ -40,24 +38,24 @@ sudo systemctl start nginx
    http {
    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
-   '"$http_user_agent" "$query_string" "$http_x_forwarded_for"';
+                    '"$http_user_agent" "$query_string" "$http_x_forwarded_for"';
    ```
    Then add a new location field in the server and update the alias path to that of your pixel.png :
 
 ```
     location /tracking-pixel{
-                alias /home/ec2-user/tracker/pixel.png;
-                access_log /var/log/nginx/pixel-access.log main;
-                default_type "image/png";
+          alias /home/ec2-user/tracker/pixel.png;
+          access_log /var/log/nginx/pixel-access.log main;
+          default_type "image/png";
 
-                expires -1;
-                  add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
-                # Set headers to prevent caching
-                add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
-                add_header Pragma "no-cache";
-                add_header Expires "0";
+          expires -1;
+            add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+          # Set headers to prevent caching
+          add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+          add_header Pragma "no-cache";
+          add_header Expires "0";
 
-                }
+          }
     }
 ```
 
@@ -67,7 +65,6 @@ The headers prevent caching, thus the tracking pixel will always be requested fr
 
 ```
 sudo chmod +x /home /home/ec2-user /home/ec2-user/tracker
-
 ```
 
 4. Test for errors in the config file and restart the nginx server:
@@ -116,4 +113,4 @@ On any device:
 ### 5. Done!
 
 Now when the receiver opens the email, you'll get a text letting you know that it was opened!
->>>>>>> 254271c (Updated README)
+
